@@ -6,8 +6,13 @@ export const statuses = [
   {id:5, name:"В пути"}
 ]
 
-const DB = [
-  {invoice:1, from:'Москва', to:'Хабаровск', reciever:"Иванов Иван Иванович"}
-]
+const DB = {
+  invoices:[]
+}
 
-export default DB;
+const getInitState = () => {
+  const stateFromLS = JSON.parse(window.localStorage.getItem("database"));
+  return stateFromLS || DB
+};
+
+export default getInitState;

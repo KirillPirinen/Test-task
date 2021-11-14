@@ -1,14 +1,29 @@
-const MainRow = () => {
+import { useInvoiceContext } from "../../context/InvoiceContext";
+
+const MainRow = ({meta:{invoice, from, to, reciever, status}, index, update}) => {
+  const {deleteInvoice} = useInvoiceContext()
+
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    deleteInvoice(invoice)
+  }
+  const updateHandler = (e) => {
+    e.preventDefault()
+    update()
+  }
+
   return (
     <tr>
-      <th scope="row">1</th>
-      <td>Москва</td>
-      <td>Казань</td>
-      <td>В пути</td>
+      <td><input name={index} type="checkbox" value={invoice}></input></td>
+      <td>{index+1}</td>
+      <td>{from}</td>
+      <td>{to}</td>
+      <td>{reciever}</td>
+      <td>{status}</td>
       <td>
-        <a href="">Изменить</a>
-        |      
-        <a href="">Удалить</a>
+        <a onClick={updateHandler} href="update">Изменить</a> 
+        &nbsp; | &nbsp;     
+        <a onClick={deleteHandler} href="delete">Удалить</a>
       </td>
     </tr>
   )

@@ -1,0 +1,32 @@
+.sort-asc {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid rgb(0, 0, 0);
+}
+.sort-desc {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid rgb(14, 8, 8);
+}
+
+.sort-asc:hover {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid rgb(0, 0, 0);
+}
+
+.sort-desc:hover {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 16px solid rgb(0, 0, 0);
+}
